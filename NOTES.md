@@ -20,5 +20,7 @@ PostToolUse : runs lint
 
 ## Run headless 
 
-I ran  claude -p 'run lint and list if any failure' with no error existing
+I ran  claude -p 'run lint and list if any failure' --allowedTools "Bash(npm run lint)" --max-turns 5 with no error existing
+
+I allowed only the `Bash(npm run lint)` command, so the run could execute lint and nothing else (no file edits, no other shell commands), and capped it at 5 turns. Nobody is there to approve prompts in a headless run, so the tool list is what keeps it safe.
 
